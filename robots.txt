@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://folegando.com.br/sitemap.xml
