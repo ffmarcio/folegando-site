@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Instalar no Android · Folegando</title>
+<meta name="description" content="Baixe o Folegando no Android em 3 passos e entre na sua turma com o código do convite.">
+<meta property="og:url" content="https://folegando.com.br/android">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Folegando · Instalar no Android">
+<meta property="og:description" content="O treino da turma. Baixe o app em 3 passos e entre com o código do convite. Gratuito durante o beta.">
+<meta property="og:image" content="https://folegando.com.br/og.png">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="favicon.svg?v=2" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="folegando.css">
+<style>
+  body { margin: 0; min-height: 100vh; background: #000; color: #fff; font: 400 17px/1.55 var(--corpo); display: grid; place-items: center; }
+  main { width: min(460px, 100% - 32px); padding: 40px 0; }
+  .lockup { font-size: 34px; text-decoration: none; color: #fff; }
+  h1 { font: 900 44px/.95 var(--display); text-transform: uppercase; margin: 28px 0 12px; }
+  p { color: var(--t2); margin: 8px 0; }
+  .botao { display: block; text-align: center; background: var(--brasa); color: #fff; font: 900 22px var(--display); letter-spacing: .05em; text-transform: uppercase; text-decoration: none; border-radius: 999px; padding: 16px; margin: 24px 0 26px; box-shadow: 0 10px 40px -10px rgba(255,90,54,.7); }
+  ol { padding: 0; margin: 0; list-style: none; counter-reset: p; display: grid; gap: 14px; }
+  ol li { counter-increment: p; display: grid; grid-template-columns: 34px 1fr; gap: 12px; color: var(--t2); }
+  ol li::before { content: counter(p); width: 34px; height: 34px; border-radius: 50%; background: var(--ar); color: #000; display: grid; place-items: center; font: 900 17px var(--display); }
+  b { color: #fff; }
+  .mini { font-size: 14px; color: var(--t3); margin-top: 26px; }
+  a { color: var(--ar); }
+</style>
+</head>
+<body>
+<main>
+  <a class="lockup" href="/"><span data-anel></span><span class="wordmark">folegando<span class="ponto">.</span></span></a>
+  <h1>Instalar no Android</h1>
+  <p>O Folegando ainda está em beta, fora da Play Store. A instalação é direto daqui.</p>
+  <a class="botao" id="baixar" href="#">Baixar o app</a>
+  <ol>
+    <li><span>Toque em <b>Baixar o app</b>. Se o celular avisar que o arquivo pode ser perigoso, toque em <b>Baixar mesmo assim</b>.</span></li>
+    <li><span>Abra o arquivo baixado. Na primeira vez, o Android pede para <b>permitir instalar de fontes desconhecidas</b> para o navegador: permita e volte.</span></li>
+    <li><span>Toque em <b>Instalar</b>, abra o Folegando e crie sua conta.</span></li>
+    <li><span>Entre na turma: abra de novo o link do convite ou digite o código em <b>Você › Turmas</b>.</span></li>
+  </ol>
+  <p class="mini">As próximas atualizações chegam sozinhas pelo app. Tem iPhone? Abra <a href="https://app.folegando.com.br">app.folegando.com.br</a> no Safari e adicione à Tela de Início.</p>
+</main>
+<script src="telas.js"></script>
+<script>
+  // APK atual (EAS, perfil preview). Atualizar a cada build novo (D240).
+  var APK = 'https://expo.dev/artifacts/eas/HG0daxbESJx7Lnei6bfJF5gmqs3exQQKPDeajVMasSA.apk';
+  document.getElementById('baixar').href = APK;
+</script>
+</body>
+</html>

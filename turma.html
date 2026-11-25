@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Treinar com a turma do trabalho, do prédio ou dos amigos · Folegando</title>
+<meta name="description" content="A turma do trabalho, do prédio ou dos amigos registrando treinos, comemorando junto e chamando quem sumiu. Qualquer treino conta. Beta por convite.">
+<link rel="canonical" href="https://folegando.com.br/turma">
+<meta property="og:url" content="https://folegando.com.br/turma">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Folegando · Treinar junto, cada um do seu jeito">
+<meta property="og:description" content="Caminhada, academia, yoga, futebol: qualquer treino conta. A turma vê, comemora e chama quem sumiu.">
+<meta property="og:image" content="https://folegando.com.br/og.png">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="favicon.svg?v=2" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="folegando.css">
+<link rel="stylesheet" href="site.css">
+<style>
+  /* só desta página (D235–D241) */
+  .heroi-site h1 { font-size: clamp(64px, 9vw, 144px); }
+  .heroi-site::before { background: radial-gradient(circle, rgba(255,90,54,.16), transparent 62%); }
+  .heroi-site::after { background: radial-gradient(circle, rgba(159,231,220,.16), transparent 60%); }
+  .palco .f1 { right: 250px; }
+  .palco .carimbo-solto { left: -20px; bottom: 20px; }
+  .letreiro div { color: #45454a; }
+
+  .grupos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 54px; }
+  .grupo { border-radius: 26px; padding: 26px 24px 28px; background: linear-gradient(180deg, #111113, #08080a); border: 1px solid #1d1d20; position: relative; overflow: hidden; }
+  .grupo .ic { font-size: 34px; display: block; margin-bottom: 26px; }
+  .grupo b { display: block; font: 900 34px/1 var(--display); text-transform: uppercase; margin-bottom: 10px; }
+  .grupo p { margin: 0; color: var(--t2); font-size: 16px; }
+  .grupo i { position: absolute; right: -30px; top: -30px; width: 120px; height: 120px; border-radius: 50%; background: var(--c); opacity: .14; }
+
+  .vitrine { display: grid; grid-template-columns: repeat(3, 1fr); gap: 34px; margin-top: 64px; }
+  .vitrine > div { display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center; }
+  .vitrine > div:nth-child(2) { margin-top: 70px; }
+  .vitrine h3 { font: 900 30px/1 var(--display); text-transform: uppercase; margin: 6px 0 0; }
+  .vitrine p { margin: 0; color: var(--t3); font-size: 16px; max-width: 320px; }
+
+  .conta-tudo { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  .conta-tudo .esportes span { font-size: 16px; }
+
+  .privado { background: radial-gradient(ellipse at 20% 0%, #0b1f1c, #000 60%); }
+  .promessas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 50px; }
+  .promessa { border-top: 2px solid var(--ar); padding-top: 22px; }
+  .promessa b { display: block; font: 900 36px/1 var(--display); text-transform: uppercase; margin-bottom: 12px; }
+  .promessa p { margin: 0; color: var(--t2); }
+
+  .convidado { border-radius: 30px; border: 1px solid #222226; background: linear-gradient(135deg, rgba(255,90,54,.12), #0a0a0b 55%); padding: 44px; display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px; align-items: center; }
+  .convidado h2 { font-size: clamp(42px, 5vw, 72px); margin: 10px 0 16px; }
+  .convidado .lead { font-size: 19px; }
+  .opcoes { display: grid; gap: 12px; }
+  .opcao { display: flex; align-items: center; gap: 16px; padding: 18px 20px; border-radius: 20px; background: rgba(255,255,255,.06); text-decoration: none; transition: background .2s; cursor: pointer; border: 0; color: #fff; font: inherit; text-align: left; width: 100%; }
+  .opcao:hover { background: rgba(255,255,255,.11); }
+  .opcao .ic { width: 46px; height: 46px; flex: none; border-radius: 14px; display: grid; place-items: center; font: 900 22px var(--display); }
+  .opcao b { display: block; font: 800 22px/1.05 var(--display); text-transform: uppercase; }
+  .opcao span { font-size: 15px; color: var(--t3); }
+  #iphone-form { display: none; margin-top: 4px; padding: 22px; gap: 12px; border-radius: 20px; }
+  #iphone-form h3 { font-size: 26px; }
+
+  .tipos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .tipos input { display: none; }
+  .tipos label { display: grid; place-items: center; height: 48px; border-radius: 14px; background: #1c1c1e; border: 1px solid #3a3a3e; color: #fff; font: 700 15px var(--corpo); cursor: pointer; transition: all .2s; }
+  .tipos input:checked + label { background: var(--ar); border-color: var(--ar); color: #000; }
+
+  @media (max-width: 980px) {
+    .grupos { grid-template-columns: 1fr 1fr; }
+    .vitrine { grid-template-columns: 1fr; }
+    .vitrine > div:nth-child(2) { margin-top: 0; }
+    .conta-tudo, .convidado { grid-template-columns: 1fr; }
+    .promessas { grid-template-columns: 1fr; }
+    .convidado { padding: 30px 22px; }
+  }
+  @media (max-width: 560px) {
+    .grupos { grid-template-columns: 1fr; }
+    .tipos { grid-template-columns: 1fr 1fr; }
+    .vitrine .fone { transform: scale(.92); }
+  }
+</style>
+</head>
+<body>
+
+<header id="topo">
+  <div class="faixa-larga">
+    <a class="lockup" href="/"><span data-anel></span><span class="wordmark">folegando<span class="ponto">.</span></span></a>
+    <nav>
+      <a href="#como">Como funciona</a>
+      <a href="#privacidade">Privacidade</a>
+      <a href="#convidado">Fui convidado</a>
+      <a href="/">Treinadores e estúdios</a>
+      <a class="entrar" href="#montar">Montar a turma</a>
+    </nav>
+  </div>
+</header>
+
+<section class="heroi-site">
+  <div class="faixa-larga heroi-grade">
+    <div>
+      <div class="eyebrow entra" style="animation-delay:.05s">Para a turma do trabalho, do prédio, dos amigos</div>
+      <h1 class="display entra" style="animation-delay:.15s">Treinar<span class="linha2">junto<span class="ponto" style="-webkit-text-stroke:0">.</span></span></h1>
+      <p class="sub entra" style="animation-delay:.3s">Cada um treina do seu jeito: caminhada, academia, yoga, futebol. No Folegando, a turma vê, comemora e chama quem sumiu. Qualquer treino conta.</p>
+      <div class="acoes entra" style="animation-delay:.45s">
+        <a class="botao brasa" href="#montar">Montar a turma do meu grupo</a>
+        <a class="botao tonal" href="#convidado">Fui convidado ↓</a>
+      </div>
+      <p class="beta entra" style="animation-delay:.6s">Beta por convite, gratuito. Android agora; iPhone ainda não.</p>
+    </div>
+    <div class="palco entra" style="animation-delay:.35s">
+      <div class="anel-gigante" data-anel></div>
+      <div class="f1" data-tela="pessoas"></div>
+      <div class="f2" data-tela="feedgrupo"></div>
+      <span class="carimbo carimbo-solto">Bora!</span>
+    </div>
+  </div>
+</section>
+
+<div class="letreiro" aria-hidden="true"><div>
+  <b>Turma do 3º andar</b><i>●</i>Condomínio Jardins<i>●</i><b>Corrida de domingo</b><i>●</i>Família Souza<i>●</i><b>Galera do financeiro</b><i>●</i>Bloco B<i>●</i><b>Amigas da faculdade</b><i>●</i>Pelada de quinta<i>●</i>
+  <b>Turma do 3º andar</b><i>●</i>Condomínio Jardins<i>●</i><b>Corrida de domingo</b><i>●</i>Família Souza<i>●</i><b>Galera do financeiro</b><i>●</i>Bloco B<i>●</i><b>Amigas da faculdade</b><i>●</i>Pelada de quinta<i>●</i>
+</div></div>
+
+<section>
+  <div class="faixa-larga">
+    <div class="eyebrow revela">Para quem</div>
+    <h2 class="display titulo-secao revela">Toda turma<br>tem quem puxe.</h2>
+    <p class="lead revela">Não precisa de treinador nem de atleta. Precisa de gente que se conhece e quer sair do sofá junto.</p>
+    <div class="grupos">
+      <div class="grupo revela" style="--c:var(--brasa)"><i></i><span class="ic">💼</span><b>Trabalho</b><p>A equipe, o andar, a empresa toda. Assunto melhor para o café do que a reunião.</p></div>
+      <div class="grupo revela" style="--c:var(--ar);transition-delay:.08s"><i></i><span class="ic">🏢</span><b>Condomínio</b><p>Quem usa a academia do prédio, quem corre no parque do lado, quem quer começar.</p></div>
+      <div class="grupo revela" style="--c:var(--cardio);transition-delay:.16s"><i></i><span class="ic">🙌</span><b>Amigos</b><p>O grupo da faculdade, a pelada de quinta, quem prometeu voltar a treinar em janeiro.</p></div>
+      <div class="grupo revela" style="--c:var(--mente);transition-delay:.24s"><i></i><span class="ic">🏡</span><b>Família</b><p>Pais, filhos adultos e primos, cada um na sua cidade, puxando um ao outro.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="como" style="padding-top:40px">
+  <div class="faixa-larga">
+    <div class="eyebrow revela">Como a turma se puxa</div>
+    <h2 class="display titulo-secao revela">Ninguém treina<br>sozinho.</h2>
+    <div class="vitrine">
+      <div class="revela"><div data-tela="feedgrupo"></div><h3>Todo mundo vê</h3><p>Cada treino aparece para a turma, com reação e comentário. O “Tá pago!” de um puxa o do outro.</p></div>
+      <div class="revela" style="transition-delay:.1s"><div data-tela="rankinggrupo"></div><h3>Ranking de constância</h3><p>Conta os dias com treino, não quem é mais forte. Quem caminha três vezes empata com quem levanta peso três vezes.</p></div>
+      <div class="revela" style="transition-delay:.2s"><div data-tela="desafio"></div><h3>Desafio da turma</h3><p>Uma meta que todo mundo soma junto, com prazo e prêmio. Cada quilômetro de cada um conta.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="faixa-larga conta-tudo">
+    <div>
+      <div class="eyebrow revela">Chamar para treinar</div>
+      <h2 class="display titulo-secao revela">Sumiu?<br>A turma chama.</h2>
+      <p class="lead revela">Na aba Pessoas, a turma vê quem ainda não treinou na semana. Um toque em “👊 Chamar” manda um aviso no celular da pessoa. Só ela fica sabendo.</p>
+      <div class="esportes revela">
+        <span style="--c:var(--cardio)">Caminhada</span><span style="--c:var(--musc)">Academia</span><span style="--c:var(--cardio)">Corrida</span><span style="--c:var(--mente)">Yoga</span><span style="--c:var(--mente)">Pilates</span><span style="--c:var(--esp)">Futebol</span><span style="--c:var(--esp)">Beach tennis</span><span style="--c:var(--cardio)">Bike</span><span style="--c:var(--luta)">Lutas</span><span style="--c:var(--circ)">Funcional</span>
+      </div>
+      <p class="lead revela" style="font-size:17px;margin-top:26px">Cada um escolhe a própria meta, de 1 a 7 dias por semana. Um dia ruim não apaga nada: o que conta é fechar a semana.</p>
+    </div>
+    <div class="revela" style="display:flex;justify-content:center"><div data-tela="pessoas"></div></div>
+  </div>
+</section>
+
+<section class="privado" id="privacidade">
+  <div class="faixa-larga">
+    <div class="eyebrow revela">Privacidade</div>
+    <h2 class="display titulo-secao revela">É da turma.<br>Só da turma.</h2>
+    <p class="lead revela">Numa turma do trabalho, a primeira pergunta é “quem vê isso?”. A resposta é curta.</p>
+    <div class="promessas">
+      <div class="promessa revela"><b>Só a turma vê</b><p>Os treinos aparecem para quem está na turma. Ninguém de fora, nenhum perfil público.</p></div>
+      <div class="promessa revela" style="transition-delay:.1s"><b>A empresa não recebe nada</b><p>Sem relatório para o RH, sem dado de saúde para ninguém. Quem organiza a turma vê o mesmo que os outros.</p></div>
+      <div class="promessa revela" style="transition-delay:.2s"><b>Saiu, apagou</b><p>Você sai da turma quando quiser e exclui a conta e os dados pelo próprio app. <a href="/privacidade">Política de privacidade</a></p></div>
+    </div>
+  </div>
+</section>
+
+<section id="convidado">
+  <div class="faixa-larga">
+    <div class="convidado revela">
+      <div>
+        <div class="eyebrow">Fui convidado</div>
+        <h2 class="display">Alguém te<br>chamou para a turma?</h2>
+        <p class="lead">São três passos: instale o app, crie a conta e entre com o código de 6 letras que veio no convite. Já instalou? Abra o link do convite de novo ou digite o código em Você › Turmas.</p>
+      </div>
+      <div class="opcoes">
+        <a class="opcao" href="/android"><span class="ic" style="background:var(--ar);color:#000">↓</span><div><b>Tenho Android</b><span>Baixar o app (versão beta, direto do Folegando)</span></div></a>
+        <button class="opcao" type="button" id="tenho-iphone"><span class="ic" style="background:rgba(255,255,255,.12);font-size:20px">📱</span><div><b>Tenho iPhone</b><span>Ainda não tem versão. Deixe seu contato e a gente avisa.</span></div></button>
+        <form id="iphone-form" novalidate>
+          <div id="iphone-campos" style="display:grid;gap:12px">
+            <h3>Me avisa</h3>
+            <label>Seu nome<input name="nome" required maxlength="80" autocomplete="name"></label>
+            <label>WhatsApp ou e-mail<input name="contato" required maxlength="120" autocomplete="email"></label>
+            <input class="mel" name="site" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <button class="botao brasa" type="submit">Quero ser avisado</button>
+            <p class="aviso erro" style="color:var(--brasa2)"></p>
+          </div>
+          <div class="resposta"><span class="carimbo" style="font-size:34px">Anotado!</span><p class="aviso" style="margin-top:14px">Quando tiver versão para iPhone, a gente te avisa.</p></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="montar">
+  <div class="faixa-larga beta-grade">
+    <div>
+      <div class="eyebrow revela">Beta por convite</div>
+      <h2 class="display titulo-secao revela">Monte a turma<br>do seu grupo.</h2>
+      <p class="lead revela">Conta para a gente que grupo é esse. A gente cria a turma, você vira quem cuida dela e recebe o convite para mandar no grupo de WhatsApp.</p>
+      <div class="fatos">
+        <div class="revela"><b>1</b>Você pede a turma aqui</div>
+        <div class="revela"><b>2</b>A gente cria e te passa o convite</div>
+        <div class="revela"><b>3</b>Cada um instala e entra com o código</div>
+      </div>
+      <p class="aviso revela" style="margin-top:26px;font-size:15px">Gratuito durante o beta. Android agora; iPhone ainda não.</p>
+    </div>
+    <form id="form" class="revela" novalidate>
+      <div id="campos">
+        <h3>Quero uma turma</h3>
+        <p class="aviso" style="margin-bottom:14px">A gente responde pelo contato que você deixar.</p>
+        <div style="display:grid;gap:16px">
+          <div class="tipos" role="radiogroup" aria-label="Que grupo é">
+            <input type="radio" name="tipo" id="t-empresa" value="empresa" checked><label for="t-empresa">Trabalho</label>
+            <input type="radio" name="tipo" id="t-condominio" value="condominio"><label for="t-condominio">Condomínio</label>
+            <input type="radio" name="tipo" id="t-amigos" value="amigos"><label for="t-amigos">Amigos</label>
+            <input type="radio" name="tipo" id="t-outro" value="outro"><label for="t-outro">Outro</label>
+          </div>
+          <label>Seu nome<input name="nome" required maxlength="80" autocomplete="name"></label>
+          <label>WhatsApp ou e-mail<input name="contato" required maxlength="120" autocomplete="email"></label>
+          <div class="duas">
+            <label>Quantas pessoas
+              <select name="turma"><option value="">Escolha</option><option value="ate10">Até 10</option><option value="10a30">10 a 30</option><option value="30a100">30 a 100</option><option value="mais100">Mais de 100</option></select>
+            </label>
+            <label>Cidade<input name="cidade" maxlength="60" autocomplete="address-level2"></label>
+          </div>
+          <label>Quer contar algo? <span style="color:var(--t3);font-weight:500">(opcional)</span><textarea name="mensagem" maxlength="600" placeholder="Nome da turma, o que o pessoal treina, se já tem grupo de WhatsApp…"></textarea></label>
+          <input class="mel" name="site" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button class="botao brasa" type="submit" id="enviar">Quero uma turma</button>
+          <p class="aviso" id="erro" style="color:var(--brasa2)"></p>
+          <p class="aviso">Usamos seus dados só para falar com você sobre o Folegando.</p>
+        </div>
+      </div>
+      <div class="resposta" id="resposta">
+        <span class="carimbo">Recebido!</span>
+        <h3>Já já a gente fala com você.</h3>
+        <p class="aviso">Enquanto isso, siga <a href="https://instagram.com/folegando">@folegando</a>.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="faixa-larga">
+    <span class="lockup"><span data-anel></span><span class="wordmark">folegando<span class="ponto">.</span></span></span>
+    <span>O treino da turma. · © 2026</span>
+    <nav><a href="/">Treinadores e estúdios</a><a href="/privacidade">Privacidade</a><a href="https://instagram.com/folegando">Instagram</a></nav>
+  </div>
+</footer>
+
+<script src="telas.js"></script>
+<script>
+  var topo = document.getElementById('topo');
+  addEventListener('scroll', function () { topo.classList.toggle('rolou', scrollY > 30); }, { passive: true });
+  var obs = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('visivel'); obs.unobserve(e.target); } }); }, { threshold: .18 });
+  document.querySelectorAll('.revela').forEach(function (el) { obs.observe(el); });
+
+  // Formulários → Supabase (tabela interesse, migrações 0011 e 0019). Chave publishable: só grava, não lê.
+  var URL_API = 'https://msgnqivmktcihwrbqkdq.supabase.co/rest/v1/interesse';
+  var CHAVE = 'sb_publishable_rZP3jnXPC6heVuQ-n99xkA_PDH2EkWT';
+  var origem = new URLSearchParams(location.search).get('origem') || 'site-turma';
+  function gravar(d) {
+    return fetch(URL_API, { method: 'POST', headers: { apikey: CHAVE, Authorization: 'Bearer ' + CHAVE, 'Content-Type': 'application/json', Prefer: 'return=minimal' }, body: JSON.stringify(d) })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); });
+  }
+  function validar(d, erro) {
+    if (d.nome.length < 2) { erro.textContent = 'Diga seu nome.'; return false; }
+    if (d.contato.length < 5) { erro.textContent = 'Deixe um WhatsApp ou e-mail para a gente responder.'; return false; }
+    return true;
+  }
+
+  // Quem organiza (perfil grupo, D238)
+  var form = document.getElementById('form');
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var erro = document.getElementById('erro');
+    erro.textContent = '';
+    if (form.site.value) return;
+    var d = { nome: form.nome.value.trim(), perfil: 'grupo', tipo: form.tipo.value, contato: form.contato.value.trim(), turma: form.turma.value || null, cidade: form.cidade.value.trim() || null, mensagem: form.mensagem.value.trim() || null, origem: origem };
+    if (!validar(d, erro)) return;
+    var botao = document.getElementById('enviar');
+    botao.disabled = true; botao.textContent = 'Enviando…';
+    gravar(d).then(function () {
+      document.getElementById('campos').style.display = 'none';
+      document.getElementById('resposta').style.display = 'block';
+    }).catch(function () { erro.textContent = 'Não deu para enviar agora. Tente de novo em instantes.'; botao.disabled = false; botao.textContent = 'Quero uma turma'; });
+  });
+
+  // Convidado com iPhone (perfil membro, D240)
+  var fi = document.getElementById('iphone-form');
+  document.getElementById('tenho-iphone').addEventListener('click', function () { fi.style.display = 'grid'; fi.nome.focus(); });
+  fi.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var erro = fi.querySelector('.erro');
+    erro.textContent = '';
+    if (fi.site.value) return;
+    var d = { nome: fi.nome.value.trim(), perfil: 'membro', sistema: 'iphone', contato: fi.contato.value.trim(), origem: origem };
+    if (!validar(d, erro)) return;
+    var botao = fi.querySelector('button');
+    botao.disabled = true; botao.textContent = 'Enviando…';
+    gravar(d).then(function () {
+      document.getElementById('iphone-campos').style.display = 'none';
+      fi.querySelector('.resposta').style.display = 'block';
+    }).catch(function () { erro.textContent = 'Não deu para enviar agora. Tente de novo em instantes.'; botao.disabled = false; botao.textContent = 'Quero ser avisado'; });
+  });
+</script>
+</body>
+</html>

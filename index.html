@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Folegando · O app de treino da turma</title>
+<meta name="description" content="Cada um registra o treino que fizer; a turma vê, comemora e chama quem sumiu. Para treinadores, estúdios e a turma do trabalho, do prédio ou dos amigos.">
+<link rel="canonical" href="https://folegando.com.br/">
+<meta property="og:url" content="https://folegando.com.br/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Folegando · O treino da turma.">
+<meta property="og:description" content="Treino do dia, ranking e a turma se puxando, do estúdio ao grupo do trabalho. Constância em semanas, não em dias. Beta por convite.">
+<meta property="og:image" content="https://folegando.com.br/og.png">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="favicon.svg?v=2" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="folegando.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+
+<header id="topo">
+  <div class="faixa-larga">
+    <a class="lockup" href="#"><span data-anel></span><span class="wordmark">folegando<span class="ponto">.</span></span></a>
+    <nav>
+      <a href="#como">Como funciona</a>
+      <a href="#treinadores">Treinadores e estúdios</a>
+      <a href="#atletas">Atletas</a>
+      <a href="/turma">Trabalho e amigos</a>
+      <a href="#beta">Beta</a>
+      <a class="entrar" href="https://admin.folegando.com.br/">Entrar</a>
+    </nav>
+  </div>
+</header>
+
+<section class="heroi-site">
+  <div class="faixa-larga heroi-grade">
+    <div>
+      <div class="eyebrow entra" style="animation-delay:.05s">Beta por convite</div>
+      <h1 class="display entra" style="animation-delay:.15s">O treino<span class="linha2">da turma<span class="ponto" style="-webkit-text-stroke:0">.</span></span></h1>
+      <p class="sub entra" style="animation-delay:.3s">Cada um registra o treino que fizer. A turma vê, reage, aparece no ranking e chama quem sumiu. Constância medida em semanas, não em dias.</p>
+      <!-- Duas portas: quem chega pelo nome escolhe o caminho no topo (2026-11-20). -->
+      <nav class="portas entra" style="animation-delay:.45s" aria-label="Escolha o seu caminho">
+        <a class="porta treinar" href="#treinadores">
+          <small>Sou treinador ou estúdio</small>
+          <b>Treino uma turma</b>
+          <span>Prescreva o treino do dia e veja quem treinou e quem sumiu.</span>
+          <i aria-hidden="true">→</i>
+        </a>
+        <a class="porta junto" href="/turma">
+          <small>Trabalho, prédio ou amigos</small>
+          <b>Treino com a turma</b>
+          <span>Qualquer treino conta. A turma comemora junto.</span>
+          <i aria-hidden="true">→</i>
+        </a>
+      </nav>
+      <p class="beta entra" style="animation-delay:.6s">Android, gratuito durante o beta. iPhone e lojas em breve.</p>
+    </div>
+    <div class="palco entra" style="animation-delay:.35s">
+      <div class="anel-gigante" data-anel></div>
+      <div class="f1" data-tela="turma"></div>
+      <div class="f2" data-tela="hoje"></div>
+      <span class="carimbo carimbo-solto">Tá pago!</span>
+    </div>
+  </div>
+</section>
+
+<div class="letreiro" aria-hidden="true"><div>
+  <b>Musculação</b><i>●</i>Circuito<i>●</i><b>AMRAP</b><i>●</i>EMOM<i>●</i><b>For Time</b><i>●</i>Muay Thai<i>●</i><b>Jiu-jitsu</b><i>●</i>Boxe<i>●</i><b>Corrida</b><i>●</i>Bike<i>●</i><b>Natação</b><i>●</i>Yoga<i>●</i><b>Pilates</b><i>●</i>Beach tennis<i>●</i>
+  <b>Musculação</b><i>●</i>Circuito<i>●</i><b>AMRAP</b><i>●</i>EMOM<i>●</i><b>For Time</b><i>●</i>Muay Thai<i>●</i><b>Jiu-jitsu</b><i>●</i>Boxe<i>●</i><b>Corrida</b><i>●</i>Bike<i>●</i><b>Natação</b><i>●</i>Yoga<i>●</i><b>Pilates</b><i>●</i>Beach tennis<i>●</i>
+</div></div>
+
+<section>
+  <div class="faixa-larga">
+    <div class="eyebrow revela">O problema</div>
+    <h2 class="display titulo-secao revela">A turma some<br>na terceira semana.</h2>
+    <div class="dores">
+      <div class="dor revela"><b>Grupo de WhatsApp</b><p>O treino se perde entre áudios, figurinhas e "bom dia". Quem faltou ninguém sabe.</p></div>
+      <div class="dor revela" style="transition-delay:.1s"><b>Planilha e caderno</b><p>Ninguém preenche. Você não vê carga, frequência nem quem está evoluindo.</p></div>
+      <div class="dor revela" style="transition-delay:.2s"><b>Streak que quebra</b><p>Um dia ruim zera a sequência, e quem zera desiste. Constância de verdade se mede na semana.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="como" style="padding-top:40px">
+  <div class="faixa-larga">
+    <div class="eyebrow revela">Como funciona</div>
+    <h2 class="display titulo-secao revela">Três passos.<br>Uma turma inteira.</h2>
+    <div class="passos">
+      <div class="passo revela"><span class="n">1</span><h3>Crie a comunidade</h3><p>Uma para o estúdio, outra para o grupo de corrida. Mande o convite por link ou código. Só quem está nela vê os treinos.</p></div>
+      <div class="passo revela" style="transition-delay:.1s"><span class="n">2</span><h3>Prescreva o treino do dia</h3><p>Musculação com séries, faixa de reps, % do 1RM e descanso, ou circuito em AMRAP, EMOM, For Time e mais. Para todos ou para quem você escolher.</p></div>
+      <div class="passo revela" style="transition-delay:.2s"><span class="n">3</span><h3>Acompanhe a turma</h3><p>Cada um registra no celular, ganha o seu "Tá pago!" e aparece no ranking. Você vê quem treinou, quem sumiu e quem está evoluindo.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="treinadores">
+  <div class="faixa-larga treinador-grade">
+    <div>
+      <div class="eyebrow revela">Para treinadores e estúdios</div>
+      <h2 class="display titulo-secao revela">Sua turma<br>na tela grande.</h2>
+      <p class="lead revela">Uma área de administração no computador para montar treino, organizar comunidades e ver o que está acontecendo. No celular, o mesmo, para quando você está no estúdio.</p>
+      <ul class="recursos">
+        <li class="revela"><span class="ic">01</span><div><b>Treino do dia</b><span>Monte com a biblioteca ao lado, reaproveite modelos e veja como o aluno recebe antes de publicar.</span></div></li>
+        <li class="revela"><span class="ic">02</span><div><b>Ranking do seu jeito</b><span>Dias com treino, minutos, distância ou pontos por atividade, com os pesos que você define.</span></div></li>
+        <li class="revela"><span class="ic">03</span><div><b>Métricas da turma</b><span>Ativos na semana, treinos por aluno, quem tem constância e quanto a turma interage.</span></div></li>
+        <li class="revela"><span class="ic">04</span><div><b>Sua biblioteca, seus vídeos</b><span>Exercícios novos, dicas de execução e fotos e vídeos seus, que aparecem para todos os alunos.</span></div></li>
+        <li class="revela"><span class="ic">05</span><div><b>Aviso quando a turma treina</b><span>Notificação quando alguém faz o treino do dia que você criou.</span></div></li>
+        <li class="revela"><span class="ic">06</span><div><b>Análise por aluno</b> <span class="em-breve">em breve</span><span style="display:block">Frequência, músculos treinados, evolução de carga e pace de cada aluno, em gráficos.</span></div></li>
+      </ul>
+    </div>
+    <div class="vitrine-admin revela">
+      <div data-tela="admin"></div>
+      <div data-tela="dia"></div>
+    </div>
+  </div>
+</section>
+
+<section class="folego" id="folego">
+  <div class="faixa-larga">
+    <svg class="anel-anim" viewBox="18 18 72 72" aria-hidden="true"><g transform="translate(54 54) scale(1.05) translate(-54 -54)"><path d="M75.92 55.92 A22 22 0 1 1 52.08 32.08" fill="none" stroke="#9FE7DC" stroke-width="7" stroke-linecap="round"/><circle cx="69.56" cy="38.44" r="5.5" fill="#FF5A36"/></g></svg>
+    <div class="eyebrow">O fôlego</div>
+    <h2 class="display titulo-secao">Feche a semana.<br>Mantenha o fôlego.</h2>
+    <p class="lead">Cada um escolhe quantos dias quer treinar por semana. Bateu a meta, a semana fecha e o fôlego cresce. Um dia ruim não apaga nada: o que conta é a semana.</p>
+    <div class="regras">
+      <span>Meta de <b>1 a 7 dias</b> por semana</span>
+      <span><b>1 semana de descanso</b> a cada 6 fechadas</span>
+      <span>Lembrete que <b>para</b> depois de 3 ignorados</span>
+    </div>
+  </div>
+</section>
+
+<section id="atletas">
+  <div class="faixa-larga">
+    <div class="eyebrow revela">Para quem treina</div>
+    <h2 class="display titulo-secao revela">Registra tudo.<br>Comemora junto.</h2>
+    <p class="lead revela">Do supino ao round de Muay Thai, da corrida ao yoga. Cada treino vira um "Tá pago!" para postar, um ponto no ranking e uma semana a mais de fôlego.</p>
+    <div class="esportes revela">
+      <span style="--c:var(--musc)">Musculação</span><span style="--c:var(--circ)">Circuito</span><span style="--c:var(--luta)">Lutas</span><span style="--c:var(--cardio)">Cardio</span><span style="--c:var(--mente)">Corpo e mente</span><span style="--c:var(--esp)">Esportes</span>
+    </div>
+    <div class="esteira">
+      <div class="revela"><div data-tela="treino"></div><div class="leg">Treino guiado<small>prescrito, descanso e 1RM</small></div></div>
+      <div class="revela" style="transition-delay:.1s"><div data-tela="rounds"></div><div class="leg">Rounds com bipe<small>lutas, por round e por tipo</small></div></div>
+      <div class="revela" style="transition-delay:.2s"><div data-tela="analise"></div><div class="leg">Análise do corpo<small>músculos, volume e evolução</small></div></div>
+      <div class="revela" style="transition-delay:.3s"><div data-tela="tapago"></div><div class="leg">Tá pago!<small>recordes, conquistas e Stories</small></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="faixa-turma">
+  <a class="faixa-larga revela" href="/turma">
+    <div>
+      <div class="eyebrow">Não é treinador?</div>
+      <h2 class="display">Monte a turma do trabalho,<br>do prédio ou dos amigos.</h2>
+      <p>Caminhada, academia, yoga, futebol: qualquer treino conta. A turma vê, comemora e chama quem sumiu.</p>
+    </div>
+    <span class="seta">→</span>
+  </a>
+</section>
+
+<section id="beta">
+  <div class="faixa-larga beta-grade">
+    <div>
+      <div class="eyebrow revela">Beta por convite</div>
+      <h2 class="display titulo-secao revela">Traga a<br>sua turma.</h2>
+      <p class="lead revela">Estamos abrindo o Folegando para os primeiros treinadores, estúdios e grupos. Conta para a gente quem é você e quantos treinam com você.</p>
+      <div class="fatos">
+        <div class="revela"><b>1</b>Gratuito durante o beta</div>
+        <div class="revela"><b>2</b>Android agora; iPhone e lojas em breve</div>
+        <div class="revela"><b>3</b>A gente monta a primeira comunidade com você</div>
+      </div>
+    </div>
+    <form id="form" class="revela" novalidate>
+      <div id="campos">
+        <h3>Quero entrar</h3>
+        <p class="aviso" style="margin-bottom:14px">Conta quem é você e a gente responde pelo contato que você deixar.</p>
+        <div style="display:grid;gap:16px">
+          <div class="perfis" role="radiogroup" aria-label="Você é">
+            <input type="radio" name="perfil" id="p-treinador" value="treinador" checked><label for="p-treinador">Treinador</label>
+            <input type="radio" name="perfil" id="p-estudio" value="estudio"><label for="p-estudio">Estúdio</label>
+            <input type="radio" name="perfil" id="p-atleta" value="atleta"><label for="p-atleta">Atleta</label>
+          </div>
+          <label>Seu nome<input name="nome" required maxlength="80" autocomplete="name"></label>
+          <label>WhatsApp ou e-mail<input name="contato" required maxlength="120" autocomplete="email"></label>
+          <div class="duas">
+            <label id="l-turma">Tamanho da turma
+              <select name="turma"><option value="">Escolha</option><option value="ate10">Até 10</option><option value="10a30">10 a 30</option><option value="30a100">30 a 100</option><option value="mais100">Mais de 100</option></select>
+            </label>
+            <label>Cidade<input name="cidade" maxlength="60" autocomplete="address-level2"></label>
+          </div>
+          <label>Quer contar algo? <span style="color:var(--t3);font-weight:500">(opcional)</span><textarea name="mensagem" maxlength="600" placeholder="Modalidades, como você organiza a turma hoje…"></textarea></label>
+          <input class="mel" name="site" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button class="botao brasa" type="submit" id="enviar">Quero entrar no beta</button>
+          <p class="aviso" id="erro" style="color:var(--brasa2)"></p>
+          <p class="aviso">Usamos seus dados só para falar com você sobre o Folegando.</p>
+        </div>
+      </div>
+      <div class="resposta" id="resposta">
+        <span class="carimbo">Recebido!</span>
+        <h3>Já já a gente fala com você.</h3>
+        <p class="aviso">Enquanto isso, siga <a href="https://instagram.com/folegando">@folegando</a>.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="faixa-larga">
+    <span class="lockup"><span data-anel></span><span class="wordmark">folegando<span class="ponto">.</span></span></span>
+    <span>O treino da turma. · © 2026</span>
+    <nav><a href="/turma">Trabalho e amigos</a><a href="/privacidade">Privacidade</a><a href="https://instagram.com/folegando">Instagram</a><a href="https://admin.folegando.com.br/">Entrar</a></nav>
+  </div>
+</footer>
+
+<script src="telas.js"></script>
+<script>
+  // topo opaco ao rolar
+  var topo = document.getElementById('topo');
+  addEventListener('scroll', function () { topo.classList.toggle('rolou', scrollY > 30); }, { passive: true });
+  // revelar ao entrar na tela
+  var obs = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('visivel'); obs.unobserve(e.target); } }); }, { threshold: .18 });
+  document.querySelectorAll('.revela, .folego').forEach(function (el) { obs.observe(el); });
+
+  // formulário → Supabase (tabela interesse, migração 0011). Chave publishable: só grava, não lê.
+  var URL_API = 'https://msgnqivmktcihwrbqkdq.supabase.co/rest/v1/interesse';
+  var CHAVE = 'sb_publishable_rZP3jnXPC6heVuQ-n99xkA_PDH2EkWT';
+  var form = document.getElementById('form');
+  var turma = document.getElementById('l-turma');
+  form.addEventListener('change', function () { turma.style.opacity = form.perfil.value === 'atleta' ? .45 : 1; });
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var erro = document.getElementById('erro');
+    erro.textContent = '';
+    if (form.site.value) return; // robô
+    var d = { nome: form.nome.value.trim(), perfil: form.perfil.value, contato: form.contato.value.trim(), turma: form.turma.value || null, cidade: form.cidade.value.trim() || null, mensagem: form.mensagem.value.trim() || null, origem: new URLSearchParams(location.search).get('origem') || 'site' };
+    if (d.nome.length < 2) return (erro.textContent = 'Diga seu nome.');
+    if (d.contato.length < 5) return (erro.textContent = 'Deixe um WhatsApp ou e-mail para a gente responder.');
+    var botao = document.getElementById('enviar');
+    botao.disabled = true; botao.textContent = 'Enviando…';
+    fetch(URL_API, { method: 'POST', headers: { apikey: CHAVE, Authorization: 'Bearer ' + CHAVE, 'Content-Type': 'application/json', Prefer: 'return=minimal' }, body: JSON.stringify(d) })
+      .then(function (r) {
+        if (!r.ok) throw new Error(r.status);
+        document.getElementById('campos').style.display = 'none';
+        document.getElementById('resposta').style.display = 'block';
+      })
+      .catch(function () { erro.textContent = 'Não deu para enviar agora. Tente de novo em instantes.'; botao.disabled = false; botao.textContent = 'Quero entrar no beta'; });
+  });
+</script>
+</body>
+</html>
